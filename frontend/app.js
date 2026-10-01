@@ -1,5 +1,5 @@
 /* ========================================
-   DEVFIX FRONTEND APPLICATION
+   ERRORLENS FRONTEND APPLICATION
    Connects to backend API for error analysis
    ======================================== */
 

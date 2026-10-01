@@ -1,4 +1,4 @@
-# ⚡ DevFix Quick Start
+# ⚡ ErrorLens Quick Start
 
 ## 🎯 Fastest Way (30 seconds)
 
@@ -20,7 +20,7 @@ npm install
 npm start
 ```
 
-Wait for: `✨ DevFix API server running on http://localhost:3000`
+Wait for: `✨ ErrorLens API server running on http://localhost:3000`
 
 ### Terminal 2 - Frontend
 ```bash
@@ -118,4 +118,4 @@ Open standalone-demo.html
 
 ---
 
-**Made for GeeksforGeeks DevFix Challenge 2024** 🏆
+**Made for GeeksforGeeks Challenge 2024** 🏆

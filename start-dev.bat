@@ -1,7 +1,7 @@
 @echo off
 echo.
 echo ========================================
-echo  DevFix - Starting Development Server
+echo  ErrorLens - Starting Development Server
 echo ========================================
 echo.
 
@@ -9,7 +9,7 @@ cd /d "%~dp0"
 
 echo [1/2] Starting Backend API Server...
 echo.
-start "DevFix Backend" cmd /k "cd backend && node server.js"
+start "ErrorLens Backend" cmd /k "cd backend && node server.js"
 
 timeout /t 2 /nobreak > nul
 

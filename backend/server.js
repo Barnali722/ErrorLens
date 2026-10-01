@@ -1,5 +1,5 @@
 /* ========================================
-   DEVFIX BACKEND SERVER
+   ERRORLENS BACKEND SERVER
    Node.js + Express API for error analysis
    ======================================== */
 
@@ -738,7 +738,7 @@ function analyzeError(errorText, language) {
 app.get('/api/health', (req, res) => {
     res.json({ 
         status: 'ok', 
-        message: 'DevFix API is running',
+        message: 'ErrorLens API is running',
         version: '1.0.0'
     });
 });
@@ -831,7 +831,7 @@ app.get('/api/examples', (req, res) => {
    START SERVER
    ======================================== */
 app.listen(PORT, () => {
-    console.log(`✨ DevFix API server running on http://localhost:${PORT}`);
+    console.log(`✨ ErrorLens API server running on http://localhost:${PORT}`);
     console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
     console.log(`🔧 Analyze endpoint: POST http://localhost:${PORT}/api/analyze`);
 });

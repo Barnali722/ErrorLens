@@ -1,8 +1,8 @@
-# DevFix
+# ErrorLens
 
 **Turn coding errors into understandable solutions.**
 
-A web application for the GeeksforGeeks DevFix challenge that helps developers understand and fix coding errors across multiple programming languages.
+A web application for the GeeksforGeeks challenge that helps developers understand and fix coding errors across multiple programming languages.
 
 ## 🌟 Features
 
@@ -258,7 +258,7 @@ MIT License - Free to use and modify.
 
 ## 👥 Author
 
-Created for the GeeksforGeeks DevFix Challenge 2024.
+Created for the GeeksforGeeks Challenge 2024.
 
 ---
 

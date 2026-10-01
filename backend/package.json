@@ -1,7 +1,7 @@
 {
-  "name": "devfix-backend",
+  "name": "errorlens-backend",
   "version": "1.0.0",
-  "description": "Backend API for DevFix - Error analysis service",
+  "description": "Backend API for ErrorLens - Error analysis service",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

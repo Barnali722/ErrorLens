@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 DevFix Setup Test\n');
+console.log('🔍 ErrorLens Setup Test\n');
 console.log('=' .repeat(50));
 
 // Check Node.js version
@@ -58,4 +58,4 @@ console.log('\n📋 Next Steps:');
 console.log('  1. Install dependencies: cd backend && npm install');
 console.log('  2. Start backend: cd backend && npm start');
 console.log('  3. Open frontend: Open frontend/index.html in browser');
-console.log('\n✨ DevFix will be ready to test!\n');
+console.log('\n✨ ErrorLens will be ready to test!\n');

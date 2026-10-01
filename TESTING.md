@@ -1,4 +1,4 @@
-# DevFix Testing Guide
+# ErrorLens Testing Guide
 
 ## 🎯 Quick Test (No Installation Required)
 
@@ -50,7 +50,7 @@ backend\start.bat
 
 You should see:
 ```
-✨ DevFix API server running on http://localhost:3000
+✨ ErrorLens API server running on http://localhost:3000
 📊 Health check: http://localhost:3000/api/health
 🔧 Analyze endpoint: POST http://localhost:3000/api/analyze
 ```
@@ -136,7 +136,7 @@ Expected Response:
 ```json
 {
   "status": "ok",
-  "message": "DevFix API is running",
+  "message": "ErrorLens API is running",
   "version": "1.0.0"
 }
 ```
@@ -254,7 +254,7 @@ taskkill /F /PID <PID>
 ## 🎓 Demo Script for Judges
 
 1. **Open standalone-demo.html**
-   - "Here's DevFix - it helps developers understand errors"
+   - "Here's ErrorLens - it helps developers understand errors"
 
 2. **Click first example chip**
    - "We have quick examples to test"

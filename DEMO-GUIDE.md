@@ -1,8 +1,8 @@
-# 🎬 DevFix Demo Guide for Judges
+# 🎬 ErrorLens Demo Guide for Judges
 
 ## 🎯 30-Second Elevator Pitch
 
-**"DevFix turns cryptic programming errors into plain-English explanations with step-by-step fixes. It's like having a senior developer explain every error message."**
+**"ErrorLens turns cryptic programming errors into plain-English explanations with step-by-step fixes. It's like having a senior developer explain every error message."**
 
 ---
 
@@ -36,7 +36,7 @@
    - "Frontend is pure HTML, CSS, JavaScript - no frameworks"
 
 2. **Show the backend running:**
-   - Open terminal showing: `✨ DevFix API server running on http://localhost:3000`
+   - Open terminal showing: `✨ ErrorLens API server running on http://localhost:3000`
    - Explain: "The backend has 15+ error pattern matching rules"
 
 3. **Test the frontend:**
@@ -161,7 +161,7 @@ const errorPatterns = [
 ## 🎬 Demo Script
 
 ### Opening (30 seconds)
-"Hi! I built DevFix to help developers understand error messages. Instead of searching Stack Overflow, you paste your error here and get an instant explanation with fixes."
+"Hi! I built ErrorLens to help developers understand error messages. Instead of searching Stack Overflow, you paste your error here and get an instant explanation with fixes."
 
 ### Live Demo (60 seconds)
 1. Open standalone-demo.html

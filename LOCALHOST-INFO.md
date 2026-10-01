@@ -1,4 +1,4 @@
-# 🌐 DevFix - Localhost Testing Guide
+# 🌐 ErrorLens - Localhost Testing Guide
 
 ## ✅ Backend is Running!
 
@@ -10,7 +10,7 @@
    ```
    http://localhost:3000/api/health
    ```
-   Should show: `{"status":"ok","message":"DevFix API is running","version":"1.0.0"}`
+   Should show: `{"status":"ok","message":"ErrorLens API is running","version":"1.0.0"}`
 
 2. **Get Examples**
    ```
