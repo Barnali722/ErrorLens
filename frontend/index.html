@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFix - Turn coding errors into understandable solutions</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans for UI, JetBrains Mono for code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Decorative background elements -->
+    <div class="decorative-circle top-left"></div>
+    <div class="decorative-circle bottom-right"></div>
+    
+    <!-- Main container with max-width constraint -->
+    <div class="container">
+        <!-- Header section -->
+        <header>
+            <div class="logo-section">
+                <span class="gfg-badge">GeeksforGeeks Challenge</span>
+            </div>
+            <h1><span class="highlight">DEV</span>FIX</h1>
+            <p class="subtitle">"Turn coding errors into understandable solutions."</p>
+            <p class="description">Developers frequently encounter errors they don't immediately understand. DevFix helps you decode them instantly.</p>
+        </header>
+
+        <!-- Input card with step 1 & 2 -->
+        <div class="card">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div style="flex: 1;">
+                    <div class="input-section">
+                        <label for="errorInput">Enter an error</label>
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-dot red"></div>
+                                <div class="terminal-dot yellow"></div>
+                                <div class="terminal-dot green"></div>
+                                <div class="terminal-title">// Plain text</div>
+                            </div>
+                            <textarea 
+                                id="errorInput" 
+                                placeholder="TypeError: Cannot read properties of undefined"
+                                aria-label="Error message input"
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div style="flex: 1;">
+                    <div class="input-section">
+                        <label for="languageSelect">Select a programming language</label>
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-dot red"></div>
+                                <div class="terminal-dot yellow"></div>
+                                <div class="terminal-dot green"></div>
+                                <div class="terminal-title">// Plain text</div>
+                            </div>
+                            <select id="languageSelect" aria-label="Select programming language">
+                                <option value="javascript">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="cpp">C++</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example error chips -->
+            <div class="examples">
+                <span class="examples-label">Try an example:</span>
+                <div class="chips" role="group" aria-label="Example errors">
+                    <button class="chip" tabindex="0">TypeError: Cannot read properties of undefined</button>
+                    <button class="chip" tabindex="0">NameError: name 'x' is not defined</button>
+                    <button class="chip" tabindex="0">NullPointerException</button>
+                    <button class="chip" tabindex="0">IndexError: list index out of range</button>
+                    <button class="chip" tabindex="0">ReferenceError: foo is not defined</button>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="explainBtn" aria-label="Explain this error">
+                <span id="btnText">Explain this error</span>
+                <span id="btnLoader" class="loader" style="display: none;"></span>
+            </button>
+        </div>
+
+        <!-- Result section - initially hidden, shown after analysis -->
+        <div class="card result-section" id="resultSection" role="region" aria-live="polite">
+            <!-- Empty state when no input provided -->
+            <div class="empty-state" id="emptyState">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Understand the problem</h3>
+                        <p style="color: var(--text-muted); margin-top: 8px;">Paste an error message above and click "Explain this error" to get started.</p>
+                        <ul style="margin-top: 16px; list-style: none; padding: 0;">
+                            <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; color: var(--text-secondary);">
+                                <span style="color: var(--color-primary);">✓</span> What happened?
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; color: var(--text-secondary);">
+                                <span style="color: var(--color-primary);">✓</span> Why might it happen?
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 12px; color: var(--text-secondary);">
+                                <span style="color: var(--color-primary);">✓</span> How can I fix it?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error state when API fails -->
+            <div class="error-state" id="errorState" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <h3>Connection error</h3>
+                <p id="errorMessage">Unable to connect to the server. Make sure the backend is running on http://localhost:3000</p>
+            </div>
+
+            <!-- Actual result content - populated by JavaScript -->
+            <div id="resultContent" style="display: none;">
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div style="flex: 1;">
+                        <h2 class="error-title" id="errorTitle"></h2>
+
+                        <div class="result-block">
+                            <h3>What happened?</h3>
+                            <p id="explanation"></p>
+                        </div>
+
+                        <div class="result-block">
+                            <h3>Why might it happen?</h3>
+                            <ul id="causesList"></ul>
+                        </div>
+
+                        <div class="result-block">
+                            <h3>How can I fix it?</h3>
+                            <div class="fix-box">
+                                <ol id="fixesList"></ol>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <div class="code-header">
+                                <h3>Code example</h3>
+                                <button class="btn btn-secondary copy-btn" id="copyBtn" aria-label="Copy code example">
+                                    Copy
+                                </button>
+                            </div>
+                            <div class="code-block">
+                                <pre id="codeExample"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
