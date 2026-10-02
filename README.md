@@ -258,7 +258,7 @@ MIT License - Free to use and modify.
 
 ## 👥 Author
 
-Created for the GeeksforGeeks Challenge 2024.
+Created for the GeeksforGeeks Challenge 2026.
 
 ---
 
